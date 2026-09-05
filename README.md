@@ -31,5 +31,5 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 ### Passos para Execução:
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git](https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git)
+   git clone https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git
    cd projeto-aplicado-praticas-mercado
