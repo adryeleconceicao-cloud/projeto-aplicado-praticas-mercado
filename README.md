@@ -4,7 +4,7 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 
 ---
 
-## 🛠️ O que Já Foi Feito (Até o Momento)
+##  O que Já Foi Feito (Até o Momento)
 
 ### 1. Desenvolvimento do Protótipo Web (Flask)
 - **Estrutura da Aplicação (`app.py`):** Configuração do framework Flask contendo as rotas principais (página de login, autenticação e painel interno protegido).
@@ -23,13 +23,13 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
+##  Como Executar o Projeto Localmente
 
 ### Pré-requisitos
 - Ter o **Docker Desktop** instalado e em execução no sistema.
 
 ### Passos para Execução:
-1. **Clone o repositório:**
+   1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git](https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git)
    cd projeto-aplicado-praticas-mercado
