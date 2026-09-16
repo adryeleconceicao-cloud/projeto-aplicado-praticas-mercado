@@ -50,10 +50,9 @@ Para simular um ambiente de produção real e seguro, a aplicação foi estrutur
 
 ### Como Executar o Ambiente Completo (Com Nginx):
 Certifique-se de que o Docker Desktop está em execução e utilize o comando de orquestração na raiz do projeto:
-
 ```bash
 docker compose up --build -d
-
+```
 ---
 
 ## Mitigações de Segurança (OWASP Top 10)
