@@ -34,6 +34,26 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
    git clone https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git
    cd projeto-aplicado-praticas-mercado
 
+---
+
+##  Arquitetura de Produção e Infraestrutura (Docker Compose & Nginx)
+
+Para simular um ambiente de produção real e seguro, a aplicação foi estruturada utilizando **Docker Compose** integrando dois serviços principais isolados em rede própria:
+
+1. **Servidor Web / Proxy Reverso (Nginx):**
+   - Atua na porta padrão **80**, recebendo as requisições externas dos usuários.
+   - Realiza o encaminhamento seguro do tráfego (*proxy_pass*) para a aplicação interna, além de adicionar cabeçalhos de controle de IP e protocolo (`X-Real-IP`, `X-Forwarded-For`).
+
+2. **Aplicação Web (Flask + Gunicorn):**
+   - Executada de forma isolada dentro de um contêiner baseado em Python `3.11-slim`.
+   - Utiliza o **Gunicorn** como servidor WSGI de alta performance para gerenciar as requisições simultâneas com estabilidade.
+
+### Como Executar o Ambiente Completo (Com Nginx):
+Certifique-se de que o Docker Desktop está em execução e utilize o comando de orquestração na raiz do projeto:
+
+```bash
+docker compose up --build -d
+
    ---
 
 ## Mitigações de Segurança (OWASP Top 10)
