@@ -33,3 +33,24 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
    ```bash
    git clone https://github.com/adryeleconceicao-cloud/projeto-aplicado-praticas-mercado.git
    cd projeto-aplicado-praticas-mercado
+
+   ---
+
+## Mitigações de Segurança (OWASP Top 10)
+
+Em conformidade com os conceitos de *Secure by Design* e *Secure by Default*, o protótipo web foi estruturado para mitigar ativamente falhas de segurança comuns mapeadas no **OWASP Top 10**. Abaixo estão descritas as 3 principais mitigações implementadas no código:
+
+### 1. Falhas de Identificação e Autenticação (Authentication Failures)
+* **O que é:** Ocorre quando funções de autenticação ou gerenciamento de sessão são implementadas incorretamente, permitindo que atacantes comprometam senhas ou realizem enumeração de usuários.
+* **Como foi mitigado no projeto:** Na rota de autenticação (`app.py`), o sistema foi programado para retornar mensagens de erro genéricas e padronizadas (`"Credenciais inválidas!"`), independentemente de o erro ter ocorrido no e-mail/usuário ou na senha. 
+* **Onde encontrar no código:** Na função de tratamento de login dentro de `app.py`, onde a validação de credenciais impede o vazamento de informações sobre quais contas de usuário existem de fato no sistema.
+
+### 2. Controle de Acesso Quebrado (Broken Access Control)
+* **O que é:** Acontece quando as restrições sobre o que usuários autenticados podem fazer não são aplicadas corretamente, permitindo que atacantes visualizem ou operem funcionalidades não autorizadas (como acessar painéis administrativos sem permissão).
+* **Como foi mitigado no projeto:** O painel interno da aplicação (`dashboard.html`) é protegido por rotas restritas no Flask. O acesso só é liberado mediante a verificação de sessão ativa do usuário. Caso contrário, o sistema bloqueia a visualização e redireciona o fluxo de volta para a tela de login.
+* **Onde encontrar no código:** Nas diretrizes de rotas protegidas em `app.py`, que exigem validação de sessão antes de renderizar o template do painel interno.
+
+### 3. Injeção (Injection - Tratamento de Entradas)
+* **O que é:** Ocorre quando dados não confiáveis são enviados para um interpretador como parte de uma consulta ou comando, permitindo a execução de códigos maliciosos ou burlar a lógica da aplicação.
+* **Como foi mitigado no projeto:** O uso estruturado do framework Flask (através do manuseio seguro de requisições via `request.form`) em conjunto com a arquitetura do protótipo garante que as entradas dos usuários sejam tratadas de forma controlada, prevenindo a execução de inputs maliciosos diretamente nos campos de submissão.
+* **Onde encontrar no código:** No gerenciamento de formulários HTML em `login.html` e na captura segura de dados realizada no backend (`app.py`).
