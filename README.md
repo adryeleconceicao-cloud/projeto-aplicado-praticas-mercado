@@ -4,7 +4,7 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 
 ---
 
-##  O que Já Foi Feito (Até o Momento)
+## O que Já Foi Feito (Até o Momento)
 
 ### 1. Desenvolvimento do Protótipo Web (Flask)
 - **Estrutura da Aplicação (`app.py`):** Configuração do framework Flask contendo as rotas principais (página de login, autenticação e painel interno protegido).
@@ -23,7 +23,7 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 
 ---
 
-##  Como Executar o Projeto Localmente
+## Como Executar o Projeto Localmente
 
 ### Pré-requisitos
 - Ter o **Docker Desktop** instalado e em execução no sistema.
@@ -36,7 +36,7 @@ Este repositório contém o código-fonte, a documentação e os artefatos de um
 
 ---
 
-##  Arquitetura de Produção e Infraestrutura (Docker Compose & Nginx)
+## Arquitetura de Produção e Infraestrutura (Docker Compose & Nginx)
 
 Para simular um ambiente de produção real e seguro, a aplicação foi estruturada utilizando **Docker Compose** integrando dois serviços principais isolados em rede própria:
 
