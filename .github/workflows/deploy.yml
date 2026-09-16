@@ -1,0 +1,15 @@
+name: Deploy Automático via CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Informação da Esteira
+        run: echo "O código foi enviado com sucesso para o GitHub e a pipeline foi acionada!"
