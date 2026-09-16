@@ -1,7 +1,10 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
-app.secret_key = 'chave_secreta_super_segura_para_sessao'
+# Lê a chave secreta das variáveis de ambiente do sistema/Docker, 
+# ou usa uma chave padrão caso esteja rodando localmente sem ela
+app.secret_key = os.environ.get('SECRET_KEY', 'chave_padrao_desenvolvimento_local')
 
 USUARIO_VALIDO = "admin"
 SENHA_VALIDA = "seguranca2026"
