@@ -54,7 +54,7 @@ Certifique-se de que o Docker Desktop está em execução e utilize o comando de
 ```bash
 docker compose up --build -d
 
-   ---
+---
 
 ## Mitigações de Segurança (OWASP Top 10)
 
@@ -74,3 +74,4 @@ Em conformidade com os conceitos de *Secure by Design* e *Secure by Default*, o 
 * **O que é:** Ocorre quando dados não confiáveis são enviados para um interpretador como parte de uma consulta ou comando, permitindo a execução de códigos maliciosos ou burlar a lógica da aplicação.
 * **Como foi mitigado no projeto:** O uso estruturado do framework Flask (através do manuseio seguro de requisições via `request.form`) em conjunto com a arquitetura do protótipo garante que as entradas dos usuários sejam tratadas de forma controlada, prevenindo a execução de inputs maliciosos diretamente nos campos de submissão.
 * **Onde encontrar no código:** No gerenciamento de formulários HTML em `login.html` e na captura segura de dados realizada no backend (`app.py`).
+
