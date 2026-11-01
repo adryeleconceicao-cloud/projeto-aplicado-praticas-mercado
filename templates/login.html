@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Projeto Aplicado</title>
+</head>
+<body style="font-family: Arial; background-color: #f4f4f9; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); width: 300px;">
+        <h2 style="text-align: center; color: #333;">Login de Acesso</h2>
+        {% if erro %}
+            <p style="color: red; text-align: center; font-size: 14px;">{{ erro }}</p>
+        {% endif %}
+        <form method="POST" action="/login">
+            <label style="font-size: 14px;">Usuário:</label><br>
+            <input type="text" name="username" required style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
+            <label style="font-size: 14px;">Senha:</label><br>
+            <input type="password" name="password" required style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
+            <button type="submit" style="width: 100%; background: #007bff; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-size: 16px;">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

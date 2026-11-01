@@ -1,0 +1,16 @@
+# Segredos e credenciais: nunca devem entrar na imagem Docker
+.env
+.env.*
+*.pem
+*.key
+
+# Controle de versão e automação
+.git
+.github
+
+# Arquivos locais e de desenvolvimento
+__pycache__/
+*.pyc
+venv/
+.venv/
+README.md

@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    container_name: flask_app_container
+    restart: always
+    # Usuário, hash da senha e SECRET_KEY ficam no arquivo .env do servidor
+    # (nunca versionado). Este arquivo não contém nenhum segredo.
+    env_file:
+      - .env
+    # Publicada só no loopback: o único caminho de entrada é o Nginx do servidor
+    # (HTTPS), nunca a porta 5000 diretamente.
+    ports:
+      - "127.0.0.1:5000:5000"
